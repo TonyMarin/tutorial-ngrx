@@ -5,5 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'frontend';
+    contador: number;
+
+    constructor() {
+        this.contador = 10;
+    }
+
+    incrementar() {
+        this.contador++;
+    }
+
+    decrementar() {
+        this.contador--;
+    }
 }
