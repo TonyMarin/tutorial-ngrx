@@ -17,7 +17,7 @@ export class AppComponent {
         //     console.log(contador);
         //     this.contador = contador;
         // });
-    }   
+    }
 
     incrementar() {
         const accion = new IncrementarAction();
