@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-nieto',
   templateUrl: './nieto.component.html'
 })
 export class NietoComponent {
-    contadorNieto: number;
+    @Input() contadorNieto!: number;
+    // @Input() contadorNieto: number = 0;
 
-    constructor() {
-        this.contadorNieto = 10;
-    }
+    constructor() {}
 
     reset() {
         this.contadorNieto = 0;
