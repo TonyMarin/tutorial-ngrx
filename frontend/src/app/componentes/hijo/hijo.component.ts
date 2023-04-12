@@ -1,28 +1,27 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { DemediarAction, DuplicarAction } from 'src/app/contador/contador.actions';
 
 @Component({
   selector: 'app-hijo',
   templateUrl: './hijo.component.html'
 })
 export class HijoComponent {
-    @Input() contadorHijo!: number;
-    // @Input() contadorHijo: number = 0;
-    @Output() contadorCambio = new EventEmitter<number>();
+    contadorHijo!: number;
 
-    constructor() { }
+    constructor(private store: Store<{ contador: number }>) {
+        this.store.subscribe(state => {
+            this.contadorHijo = state.contador;
+        });
+    }
 
     duplicar() {
-        this.contadorHijo*=2;
-        this.contadorCambio.emit(this.contadorHijo);
+        const action = new DuplicarAction();
+        this.store.dispatch(action);
     }
 
     demediar() {
-        this.contadorHijo/=2;
-        this.contadorCambio.emit(this.contadorHijo);
-    }
-
-    resetNieto(nuevoContador: number) {
-        this.contadorHijo = nuevoContador;
-        this.contadorCambio.emit(this.contadorHijo);
+        const action = new DemediarAction();
+        this.store.dispatch(action);
     }
 }
