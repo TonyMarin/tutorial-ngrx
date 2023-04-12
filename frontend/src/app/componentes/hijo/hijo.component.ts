@@ -1,21 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hijo',
   templateUrl: './hijo.component.html'
 })
 export class HijoComponent {
-    contador: number;
+    @Input() contadorHijo!: number;
+    // @Input() contadorHijo: number = 0;
 
-    constructor() {
-        this.contador = 10;
-    }
+    constructor() { }
 
     duplicar() {
-        this.contador*=2;
+        this.contadorHijo*=2;
     }
 
     demediar() {
-        this.contador/=2;
+        this.contadorHijo/=2;
     }
 }
