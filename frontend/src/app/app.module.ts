@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HijoComponent } from './componentes/hijo/hijo.component';
+import { NietoComponent } from './componentes/nieto/nieto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HijoComponent
+    HijoComponent,
+    NietoComponent
   ],
   imports: [
     BrowserModule
