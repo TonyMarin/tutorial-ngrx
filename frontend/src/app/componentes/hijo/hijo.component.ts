@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hijo',
@@ -7,14 +7,17 @@ import { Component, Input } from '@angular/core';
 export class HijoComponent {
     @Input() contadorHijo!: number;
     // @Input() contadorHijo: number = 0;
+    @Output() contadorCambio = new EventEmitter<number>();
 
     constructor() { }
 
     duplicar() {
         this.contadorHijo*=2;
+        this.contadorCambio.emit(this.contadorHijo);
     }
 
     demediar() {
         this.contadorHijo/=2;
+        this.contadorCambio.emit(this.contadorHijo);
     }
 }

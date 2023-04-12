@@ -16,6 +16,6 @@
 
 <div class="row text-center">
     <div class="col">
-        <app-hijo [contadorHijo]="contador"></app-hijo>
+        <app-hijo [contadorHijo]="contador" (contadorCambio)="contador=$event"></app-hijo>
     </div>
 </div>
