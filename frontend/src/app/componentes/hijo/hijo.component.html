@@ -1,9 +1,11 @@
 <h3>Contador</h3>
 <h4>{{ contadorHijo }}</h4>
+<p>Multiplicador: <input type="number" [(ngModel)]="multiplicador"></p>
 
 <div class="row text-center">
     <div class="col">
         <button class="btn btn-primary" (click)="duplicar()">Duplicar</button>
+        <button class="btn btn-primary" (click)="multiplicar()">Multiplicar</button>
         <button class="btn btn-info" (click)="demediar()">Demediar</button>
     </div>
 </div>

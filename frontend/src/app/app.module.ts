@@ -8,6 +8,8 @@ import { NietoComponent } from './componentes/nieto/nieto.component';
 import { StoreModule } from '@ngrx/store';
 import { contadorReducer } from './contador/contador.reducer';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +19,7 @@ import { contadorReducer } from './contador/contador.reducer';
   imports: [
     BrowserModule,
     StoreModule.forRoot({ contador: contadorReducer }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

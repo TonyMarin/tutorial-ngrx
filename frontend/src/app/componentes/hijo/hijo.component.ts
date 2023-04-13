@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { DemediarAction, DuplicarAction } from 'src/app/contador/contador.actions';
+import { DemediarAction, DuplicarAction, MultiplicarPorFactorAction } from 'src/app/contador/contador.actions';
 
 @Component({
   selector: 'app-hijo',
@@ -8,6 +8,7 @@ import { DemediarAction, DuplicarAction } from 'src/app/contador/contador.action
 })
 export class HijoComponent {
     contadorHijo!: number;
+    multiplicador: number = 0;
 
     constructor(private store: Store<{ contador: number }>) {
         this.store.subscribe(state => {
@@ -23,5 +24,10 @@ export class HijoComponent {
     demediar() {
         const action = new DemediarAction();
         this.store.dispatch(action);
+    }
+
+    multiplicar() {
+        const accion = new MultiplicarPorFactorAction(this.multiplicador);
+        this.store.dispatch(accion);
     }
 }
