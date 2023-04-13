@@ -13,6 +13,8 @@ export function contadorReducer(state: number = 10, action: Action) {
             return state / 2;
         case contadorActions.RESET:
             return 0;
+        case contadorActions.MULTIPLICAR_POR_FACTOR:
+            return state * (action as contadorActions.MultiplicarPorFactorAction).payload;
         default:
             return state;
     }
