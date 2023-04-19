@@ -1,7 +1,7 @@
 export interface ContadorState {
-    contador: number;
+  valorContador: number;
 }
 
 export const initialState: ContadorState = {
-    contador: 10
+  valorContador: 10
 };
