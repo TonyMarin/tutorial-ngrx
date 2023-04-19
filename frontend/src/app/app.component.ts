@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { DecrementarAction, IncrementarAction } from './contador/contador.actions';
 import { ContadorState } from './contador/contador.state';
@@ -7,10 +7,12 @@ import { ContadorState } from './contador/contador.state';
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     contadorHtmlApp!: number;
 
-    constructor(private store: Store<{ AppContador: ContadorState }>) {
+    constructor(private store: Store<{ AppContador: ContadorState }>) { }
+
+    ngOnInit(): void {
         this.store.subscribe(state => {
             this.contadorHtmlApp = state.AppContador.valorContador;
         });
