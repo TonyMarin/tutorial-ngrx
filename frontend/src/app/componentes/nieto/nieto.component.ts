@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ResetAction } from 'src/app/contador/contador.actions';
+import { ContadorState } from 'src/app/contador/contador.state';
 
 @Component({
   selector: 'app-nieto',
@@ -9,9 +10,9 @@ import { ResetAction } from 'src/app/contador/contador.actions';
 export class NietoComponent {
     contadorNieto!: number;
 
-    constructor(private store: Store<{ contador: number }>) {
+    constructor(private store: Store<{ asd: ContadorState }>) {
         this.store.subscribe(state => {
-            this.contadorNieto = state.contador;
+            this.contadorNieto = state.asd.valorContador;
         });
     }
 
