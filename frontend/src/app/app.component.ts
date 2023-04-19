@@ -10,21 +10,12 @@ import { selectValorContador } from './contador/contador.selector';
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-    contadorHtmlApp!: number;
     contadorHtmlApp$!: Observable<number>;
 
-    constructor(private store: Store<{ AppContador: ContadorState }>) { }
+    constructor(private store: Store<ContadorState>) { }
 
     ngOnInit(): void {
-        // contadorHtmlApp$ es Observable<number>:
         this.contadorHtmlApp$ = this.store.pipe(select(selectValorContador));
-        //contadorHtmlApp es number:
-        this.store.subscribe(state => {
-            this.contadorHtmlApp = state.AppContador.valorContador;
-        });
-        // this.store.select('AppContador').subscribe(AppContador => {
-        //     this.contadorHtmlApp = AppContador.valorContador;;
-        // });
     }
 
     incrementar() {
