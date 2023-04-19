@@ -20,14 +20,10 @@ export class AppComponent {
     }
 
     incrementar() {
-        const accion = new IncrementarAction();
-        this.store.dispatch(accion);
-        // this.store.dispatch(new IncrementarAction());
+        this.store.dispatch(IncrementarAction());
     }
 
     decrementar() {
-        const accion = new DecrementarAction();
-        this.store.dispatch(accion);
-        // this.store.dispatch(new DecrementarAction());
+        this.store.dispatch(DecrementarAction());
     }
 }

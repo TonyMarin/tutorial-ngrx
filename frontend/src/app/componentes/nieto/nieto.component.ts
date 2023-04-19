@@ -16,7 +16,6 @@ export class NietoComponent {
     }
 
     reset() {
-        const action = new ResetAction();
-        this.store.dispatch(action);
+        this.store.dispatch(ResetAction());
     }
 }

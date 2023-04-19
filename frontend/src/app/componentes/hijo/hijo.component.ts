@@ -8,7 +8,7 @@ import { DemediarAction, DuplicarAction, MultiplicarPorFactorAction } from 'src/
 })
 export class HijoComponent {
     contadorHijo!: number;
-    multiplicador: number = 0;
+    multiplicador: number = 5;
 
     constructor(private store: Store<{ contador: number }>) {
         this.store.subscribe(state => {
@@ -17,17 +17,14 @@ export class HijoComponent {
     }
 
     duplicar() {
-        const action = new DuplicarAction();
-        this.store.dispatch(action);
+        this.store.dispatch(DuplicarAction());
     }
 
     demediar() {
-        const action = new DemediarAction();
-        this.store.dispatch(action);
+        this.store.dispatch(DemediarAction());
     }
 
     multiplicar() {
-        const accion = new MultiplicarPorFactorAction(this.multiplicador);
-        this.store.dispatch(accion);
+        this.store.dispatch(MultiplicarPorFactorAction({payload: this.multiplicador}));
     }
 }
