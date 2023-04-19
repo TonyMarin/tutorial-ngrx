@@ -8,11 +8,11 @@ import { ContadorState } from 'src/app/contador/contador.state';
   templateUrl: './nieto.component.html'
 })
 export class NietoComponent {
-    contadorNieto!: number;
+    contadorHtmlNieto!: number;
 
-    constructor(private store: Store<{ asd: ContadorState }>) {
+    constructor(private store: Store<{ AppContador: ContadorState }>) {
         this.store.subscribe(state => {
-            this.contadorNieto = state.asd.valorContador;
+            this.contadorHtmlNieto = state.AppContador.valorContador;
         });
     }
 

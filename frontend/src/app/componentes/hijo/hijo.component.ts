@@ -8,12 +8,12 @@ import { ContadorState } from 'src/app/contador/contador.state';
   templateUrl: './hijo.component.html'
 })
 export class HijoComponent {
-    contadorHijo!: number;
+    contadorHtmlHijo!: number;
     multiplicador: number = 5;
 
-    constructor(private store: Store<{ asd: ContadorState }>) {
+    constructor(private store: Store<{ AppContador: ContadorState }>) {
         this.store.subscribe(state => {
-            this.contadorHijo = state.asd.valorContador;
+            this.contadorHtmlHijo = state.AppContador.valorContador;
         });
     }
 

@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ asd: contadorReducer }),
+    StoreModule.forRoot({ AppContador: contadorReducer }),
     FormsModule
   ],
   providers: [],
