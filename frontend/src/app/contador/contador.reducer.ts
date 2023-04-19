@@ -9,5 +9,5 @@ export const contadorReducer = createReducer(
     on(contadorActions.DuplicarAction, state => ({ ...state, valorContador: state.valorContador * 2 })),
     on(contadorActions.DemediarAction, state => ({ ...state, valorContador: state.valorContador / 2 })),
     on(contadorActions.ResetAction, state => ({ ...state, valorContador: 0 })),
-    on(contadorActions.MultiplicarPorFactorAction, (state, { payload }) => ({ ...state, contador: state.valorContador * payload }))
+    on(contadorActions.MultiplicarPorFactorAction, (state, { payload }) => ({ ...state, valorContador: state.valorContador * payload }))
 );
