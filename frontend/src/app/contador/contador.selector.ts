@@ -7,3 +7,8 @@ export const selectValorContador = createSelector(
     selectContadorState,
     (state: ContadorState) => state.valorContador
 );
+
+export const selectCargandoContador = createSelector(
+    selectContadorState,
+    (state: ContadorState) => state.estaCargando
+);

@@ -1,6 +1,11 @@
 <div class="row text-center">
     <div class="col">
-        <h1>Contador</h1>
+        <h1>Contador
+            <span *ngIf="(cargando$ | async)">
+                <img src="assets/cargando.gif" alt="Cargando..." style="width: 100px;"/>
+            </span>
+        </h1>
+
         <h2>{{ contadorHtmlApp$ | async }}</h2>
     </div>
 </div>
